@@ -1,6 +1,6 @@
 # My ignore
 dist
-
+*.babelrc
 # Logs
 logs
 *.log
