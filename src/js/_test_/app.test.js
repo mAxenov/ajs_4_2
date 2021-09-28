@@ -1,18 +1,19 @@
-import { getColorHealth } from '../app.js';
+import { sortByHealth } from '../app.js';
 
-describe('getColorHealth()', () => {
-    test('check healthy', () => {
-        expect(getColorHealth({ name: 'Маг', health: 51 })).toBe('healthy');
+describe('sortByHealth()', () => {
+    test('check sort', () => {
+        const received = sortByHealth([
+            { name: 'мечник', health: 10 },
+            { name: 'маг', health: 100 },
+            { name: 'лучник', health: 80 },
+        ]);
+
+        const expected = [
+            { name: 'маг', health: 100 },
+            { name: 'лучник', health: 80 },
+            { name: 'мечник', health: 10 },
+        ];
+        expect(received).toEqual(expected);
     })
-
-    test('check getColorHealth', () => {
-        expect(getColorHealth({ name: 'Маг', health: 50 })).toBe('wounded');
-    })
-
-    test('check getColorHealth', () => {
-        expect(getColorHealth({ name: 'Маг', health: 14 })).toBe('critical');
-    })
-
-
 })
 

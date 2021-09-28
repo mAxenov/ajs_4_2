@@ -5,12 +5,6 @@
 // const game = new Game();
 // game.start();
 
-export function getColorHealth(array) {
-    if (array.health > 50) {
-        return 'healthy';
-    } else if (array.health < 15) {
-        return 'critical';
-    } else {
-        return 'wounded';
-    }
+export function sortByHealth(arr) {
+    return arr.sort((a, b) => a.health < b.health ? 1 : -1);
 }
