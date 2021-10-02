@@ -27,7 +27,7 @@ describe('sortByHealth()', () => {
             { name: 'лучник', health: 80 },
             { name: 'мечник', health: 10 },
         ];
-        expect(received).toBe(expected);
+        expect(received).not.toBe(expected);
     })
 })
 
